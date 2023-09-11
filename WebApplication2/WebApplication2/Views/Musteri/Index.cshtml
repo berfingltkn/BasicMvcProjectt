@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>MUSTERIID</th>
+        <th>MUSTERIAD</th>
+        <th>MUSTERISOYAD</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+            <tr>
+                <td>@musteri.MUSTERIID</td>
+                <td>@musteri.MUSTERIAD</td>
+                <td>@musteri.MUSTERISOYAD</td>
+                <td>
+                    <a href="/MUSTERI/SIL/@musteri.MUSTERIID" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <a href="/MUSTERI/MusteriGetir/@musteri.MUSTERIID"class="btn btn-success">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/MUSTERI/newCustomer/ " class="btn btn-primary">Add New Category </a>
+
+
+

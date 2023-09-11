@@ -1,0 +1,41 @@
+﻿@using WebApplication2.Models.Entity
+@model List<TBLURUNLER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>URUN ID</th>
+        <th>URUN AD</th>
+        <th>URUN KATEGORI</th>
+        <th>FIYAT</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>SİL</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <td>@urn.URUNID</td>
+                <td>@urn.URUNAD</td>
+                <td>@(urn.TBLKATEGORILER != null ? urn.TBLKATEGORILER.KATEGORIAD : string.Empty)</td> <!--    Bu kısımda hata var!! TBLKATEGORILER:KATEGORIAD ı boş döndürüyor -->
+                <td>@urn.FIYAT</td>
+                <td>@urn.MARKA</td>
+                <td>@urn.STOK</td>
+                <td>
+                    <a href="/URUNLER/SIL/@urn.URUNID" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <a href="/URUNLER/UrunGetir/@urn.URUNID" class="btn btn-success">Update</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/URUNLER/newProduct" class="btn btn-primary">Add New Product</a>

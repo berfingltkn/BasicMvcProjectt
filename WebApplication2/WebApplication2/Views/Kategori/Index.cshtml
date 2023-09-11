@@ -1,0 +1,42 @@
+﻿@using WebApplication2.Models.Entity
+@model PagedList.IPagedList<TBLKATEGORILER>
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>CATEGORY ID</th>
+        <th>CATEGORY NAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <td>@ktgr.KATEGORIID</td>
+                <td>@ktgr.KATEGORIAD</td>
+                <td>
+                    <a href="/KATEGORI/SIL/@ktgr.KATEGORIID" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <a href="/KATEGORI/KAtegoriGetir/@ktgr.KATEGORIID" class="btn btn-success">
+                        Update
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<!--CTRL+K+D kodları düzenliyor-->
+<a href="/KATEGORI/YENIKATEGORI/ " class="btn btn-primary">Add New Category </a>
+

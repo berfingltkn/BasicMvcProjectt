@@ -1,0 +1,41 @@
+﻿@model WebApplication2.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+
+    <!--
+        Bu şekilde yaparsak textbox lara db den veriler otomatik olarak gelmez!!
+        <h2>Category Update</h2>
+    <div>
+
+        <label>CATEGORY ID</label>
+        <input type="text" class="form-control" name="KATEGORIID" />
+    </div>
+    <br/>
+    <div>
+
+        <label>CATEGORY NAME</label>
+        <input type="text" class="form-control" name="KATEGORIAD" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Save Update</button>
+    </div>
+
+    -->
+
+<div class="form-group">
+    @Html.LabelFor(m => m.KATEGORIID)
+    @Html.TextBoxFor(m => m.KATEGORIID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.KATEGORIAD)
+    @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control" })
+
+</div>
+    <div>
+        <button class="btn btn-warning">Update Category</button>
+    </div>
+}

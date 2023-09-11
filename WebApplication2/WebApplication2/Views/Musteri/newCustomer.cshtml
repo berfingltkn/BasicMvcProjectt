@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "newCustomer";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>CUSTOMER NAME</label>
+        <input type="text" class="form-control" name="MUSTERIAD" required="" placeholder="Please enter name" />
+    </div>
+    <div style="margin-top=15px"></div>
+    <div>
+        <label>CUSTOMER SURNAME</label>
+        <input type="text" name="MUSTERISOYAD" class="form-control" required="" placeholder="Please enter surname" />
+    </div>
+    <div style="margin-top:15px">
+
+        <button class="btn btn-info" id="btn1">Add Customer</button>
+    </div>
+    <script>
+        $('#btn1').click(function () {
+            alert('Customer Added Successfully');
+        });
+    </script>
+  
+</form>
+

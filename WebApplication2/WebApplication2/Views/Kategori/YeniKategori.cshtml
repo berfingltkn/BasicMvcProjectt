@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <!--method=post yapınca butona tıklama işlemi yani post işlemi olduğundan
+        arka planda da httppost kısmı için yazılan kodlar çalışır-->
+    <div>
+        <label>CATEGORY NAME</label>
+        <input type="text" class="form-control" name="KATEGORIAD" maxlength="25" placeholder="Please enter category name" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn2">Add Category</button>
+    </div>
+    <script>
+        $('#btn2').click(function () {
+            alert('Category Added Successfully');
+        });
+    </script>
+</form>

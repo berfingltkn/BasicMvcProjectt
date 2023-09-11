@@ -1,0 +1,46 @@
+﻿
+@model WebApplication2.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "newProduct";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Product Name</label>
+        <input type="text" name="URUNAD" class="form-control" required="" placeholder="Please enter product name" />
+    </div>
+    <div>
+        <label>Product Category</label>
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        <!-- m diye bir değer oluşturduk daha sonra m nin içine kategoriAd ı ata dedik, viewbag ile gelen değerlerli listeden çek dedik,
+
+        ilk olarak html.dropdownlist ile combobox oluşturuyoruz.
+        birinci parametre -> dropdownlistener de seçilen özelliği tblkategorıler.kategorııd ye bağlar.
+        ikinci parametre -> DropDownList'da görünecek seçenekleri temsil eder.
+
+        -->
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="text" name="FIYAT" class="form-control" placeholder="Plese enter product price" />
+    </div>
+    <div>
+        <label>Brand</label>
+        <input type="text" name="MARKA" class="form-control" placeholder="Please enter product brand" />
+    </div>
+    <div>
+        <label>Stock</label>
+        <input type="text" name="STOK" class="form-control" placeholder="Please enter product stock" />
+    </div>
+    <div style="margin-top:15px">
+
+        <button class="btn btn-info" id="btn3">Add Product</button>
+    </div>
+    <script>
+        $('#btn3').click(function () {
+            alert('Product Added Successfully');
+        });
+    </script>
+</form>
+

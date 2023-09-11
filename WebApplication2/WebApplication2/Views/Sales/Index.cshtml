@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>SALES PAGE</h2>
+<br />
+
+<!--MVC de POPUP(modal) kullanımı. Açılır pencere şeklindedir. data-toggel="modal" yaparsak modal olacağını belirtmiş oluruz. -->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Make A Sale</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">SALES PAGE</h2>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <label>
+                        Product Name
+                    </label>
+                    <input type="text" name="Product" class="form-control" />
+                    <br />
+                    <label>
+                        Product Brand
+                    </label>
+                    <input type="text" name="Brand" class="form-control" />
+                    <br />
+                    <label>Customer Name-Surname</label>
+                    <input type="text" name="name" class="form-control" />
+                    <br />
+                    <label>Customer Phone Number</label>
+                    <input type="text" name="phone" class="form-control" />
+                    <br />
+                    <button class="btn-info">Save Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
